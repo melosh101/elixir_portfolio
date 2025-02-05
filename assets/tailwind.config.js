@@ -12,6 +12,7 @@ module.exports = {
     "../lib/portfolio_web/**/*.*ex"
   ],
   theme: {
+    
     extend: {
       colors: {
         brand: "#FD4F00",

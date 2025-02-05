@@ -42,7 +42,7 @@ defmodule Portfolio.MixProject do
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
+      {:tailwind, git: "https://github.com/phoenixframework/tailwind", ref: "6f45cae55d6bf5c35aba760d3423aed556b20d4b", runtime: Mix.env() == :dev},
       {:heroicons,
        github: "tailwindlabs/heroicons",
        tag: "v2.1.1",

@@ -42,3 +42,11 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+
+const {animate} = Motion
+
+
+animate("#intro", {
+  
+})
+

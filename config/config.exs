@@ -27,21 +27,20 @@ config :esbuild,
   version: "0.17.11",
   portfolio: [
     args:
-      ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+      ~w(js/app.js --bundle --target=es2017 --splitting --format=esm --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
 # Configure tailwind (the version is required)
 config :tailwind,
-  version: "3.4.3",
+  version: "4.0.0",
   portfolio: [
     args: ~w(
-      --config=tailwind.config.js
-      --input=css/app.css
-      --output=../priv/static/assets/app.css
+      --input=assets/css/app.css
+      --output=priv/static/assets/app.css
     ),
-    cd: Path.expand("../assets", __DIR__)
+    cd: Path.expand("..", __DIR__)
   ]
 
 # Configures Elixir's Logger
