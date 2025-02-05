@@ -1,5 +1,6 @@
-# Portfolio
-
+# Elixir_Portfolio
+this is a rewrite of my original [web portfolio](https://github.com/melosh101/portfolio).
+ 
 To start your Phoenix server:
 
   * Run `mix setup` to install and setup dependencies
