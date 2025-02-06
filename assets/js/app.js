@@ -50,12 +50,22 @@ const {animate, delay, easeIn} = require("motion")
  */
 const introSeq = [
   ["#intro", {translateY: ["-30rem", "0"]}, {duration: .6, delay: 1.5, type: "spring", bounce: .4}],
-  ["#intro", {rotate: 0.3}, {duration: 0.3, delay: 0.5}],
+  ["#intro", {rotate: 0.35}, {duration: 0.2, delay: 0.2}],
   // drop img to border
   ["#intro>img", {translateY: ["0", "3.45rem"]}, { duration: .25, ease: "easeIn"}],
   ["#intro>img", {translateX: ["0", "1.98rem"], rotate: 25}, { duration: .3, ease: "easeIn"}],
 
 ]
 
-animate(introSeq)
 
+animate(introSeq).then(() => {
+  console.log("anim done");
+
+  document.getElementById("pointer").classList.remove("opacity-0")
+})
+
+const arrowSeq = [
+  ["#pointer", {translateY: ["0", ".5rem", "0"], scale: [1, .9, 1]}, {duration: 2}]
+]
+
+animate(arrowSeq, {repeat: Infinity})

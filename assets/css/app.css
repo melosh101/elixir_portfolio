@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 /* This file is for your main application CSS */
+
+@theme {
+    --breakpoint-3xl: 120rem;
+}
