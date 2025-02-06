@@ -43,10 +43,19 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 
-const {animate} = Motion
+const {animate, delay, easeIn} = require("motion")
 
+/**
+ * @type {Array<Array<string, Object>>}
+ */
+const introSeq = [
+  ["#intro", {translateY: ["-30rem", "0"]}, {duration: .6, delay: 3, type: "spring", bounce: .4}],
+  ["#intro", {rotate: 0.3}, {duration: 0.3, delay: 0.5}],
+  // drop img to border
+  ["#intro>img", {translateY: ["0", "3.8rem"]}, { duration: .3, ease: "easeIn"}],
+  ["#intro>img", {translateX: ["0", "1.98rem"], rotate: 25}, { duration: .3, ease: "easeIn"}],
 
-animate("#intro", {
-  
-})
+]
+
+animate(introSeq)
 
