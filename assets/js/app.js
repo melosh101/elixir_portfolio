@@ -57,7 +57,7 @@ const introSeq = [
 
 ]
 
-
+const introElm = document.getElementById("intro").classList.remove("opacity-0")
 animate(introSeq).then(() => {
   console.log("anim done");
 
