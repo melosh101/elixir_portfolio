@@ -1,5 +1,5 @@
 import Config
-
+import Dotenvy
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
@@ -96,4 +96,7 @@ if config_env() == :prod do
   #       force_ssl: [hsts: true]
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
+
+
+  source!([".enviroment", System.get_env()])
 end
