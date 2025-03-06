@@ -20,7 +20,7 @@ import "phoenix_html"
 // Establish Phoenix Socket and LiveView configuration.
 import { Socket } from "phoenix"
 import { Hook, LiveSocket } from "phoenix_live_view"
-import { animate, AnimationSequence, delay, easeIn } from "motion";
+import { animate, AnimationSequence, delay, easeIn, stagger } from "motion";
 import topbar from "../vendor/topbar"
 
 let hooks: Record<string, Hook> = {
@@ -70,6 +70,8 @@ function handleMount() {
     // drop img to border
     ["#intro>img", { translateY: ["0", "3.45rem"] }, { duration: .25, ease: "easeIn" }],
     ["#intro>img", { translateX: ["0", "1.98rem"], rotate: 25 }, { duration: .3, ease: "easeIn" }],
+    ["#info", { opacity: 1 }, { duration: 0.1, ease: "easeIn" }],
+    ["#info>section>*>li", { translateY: ["-1rem", "0"], opacity: [0, 1] }, { duration: 0.2, delay: stagger(0.1), ease: "easeIn" }],
 
   ]
 
@@ -78,9 +80,9 @@ function handleMount() {
     ["#pointer", { translateY: ["0", ".5rem", "0"], scale: [1, .9, 1] }, { duration: 2 }]
   ]
   if (!noAnims) {
-    animate(introSeq).then(() => {
-    animate("#pointer", { opacity: 1 }, { duration: 0 })
-    animate(arrowSeq, { repeat: Infinity })
+    animate(introSeq, {duration: 2}).then(() => {
+      animate("#pointer", { opacity: 1 }, { duration: 0 })
+      animate(arrowSeq, { repeat: Infinity })
     })
   } else {
     animate("#pointer", { opacity: 1 }, { duration: 0 })

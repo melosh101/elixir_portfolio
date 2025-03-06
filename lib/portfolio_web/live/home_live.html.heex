@@ -1,26 +1,73 @@
 <.flash_group flash={@flash} />
-<div id="root" class="bg-black h-screen text-white overflow-scroll no-scrollbar snap-y snap-mandatory" phx-hook="handleMount">
-<div class="min-h-screen">
-  <section
-    class="border-4 border-gray-600/60 bg-gray-700/80 rounded-xl flex w-1/2 p-8 mt-16 mx-auto justify-between h-72 snap-center opacity-0"
-    id="intro"
-  >
-    <div class="mr-8">
-      <h1 class="font-bold font-serif text-4xl">Milas Holsting</h1>
-      <h2 class="text-xl font-mono font-bold">&lt;Code is life/&gt;</h2>
-      <h2 class="mt-8">Hvem er Jeg?</h2>
-      <p class="">
-        Jeg er en 18 årig ung dreng, som elsker et god udfordring.
-        Jeg arbejder primært med React og Next.js men har også erfarring med andre teknologier såsom, Elixir/Pheonix, asp.net og unity.
-      </p>
+<% skills = [
+  "React",
+  "Next.js",
+  "Elixir/Phoenix",
+  "Unity",
+  "ASP.NET",
+  "C#",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "TailwindCSS",
+  "PostgreSQL",
+  "MongoDB",
+  "Git",
+  "GitHub",
+] %>
+<div
+  id="root"
+  class="bg-black h-screen text-white overflow-scroll no-scrollbar snap-y snap-mandatory"
+  phx-hook="handleMount"
+>
+  <div class="min-h-screen">
+    <section
+      class="border-4 border-gray-600/60 bg-gray-700/80 rounded-xl flex w-1/2 p-8 mt-16 mx-auto justify-between h-72 snap-center opacity-0"
+      id="intro"
+    >
+      <div class="mr-8">
+        <h1 class="font-bold font-serif text-4xl">Milas Holsting</h1>
+        <h2 class="text-xl font-mono font-bold">&lt;Code is life/&gt;</h2>
+        <h2 class="mt-8">Hvem er Jeg?</h2>
+        <p class="">
+          Jeg er en 18 årig ung dreng, som elsker et god udfordring.
+          Jeg arbejder primært med React og Next.js men har også erfarring med andre teknologier såsom, Elixir/Pheonix, asp.net og unity.
+        </p>
+      </div>
+      <img src="/images/milasholsting.png" alt="" class="size-48 rounded-full relative" />
+    </section>
+    <div
+      id="info"
+      class="grid grid-cols-2 border border-neutral-800 rounded-sm w-1/2 p-8 mt-4 mx-auto snap-center h-52 opacity-0"
+    >
+      <section class="">
+        <h2 class="text-xl font-bold font-mono">Socials</h2>
+        <ul class=" mt-3 flex flex-col flex-wrap gap-[calc(var(--spacing) * 0.5)] max-h-32">
+          <li class="flex-[1 1 80px]" :for={skill <- skills}>{skill}</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="text-xl font-bold font-monox">Skills</h2>
+        <ul class=" mt-3 flex flex-col flex-wrap gap-[calc(var(--spacing) * 0.5)] max-h-32">
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+          <li class="flex-[1 1 80px]">lorem ipsum</li>
+        </ul>
+      </section>
     </div>
-    <img src="/images/milasholsting.png" alt="" class="size-48 rounded-full relative" />
-  </section>
-</div>
+  </div>
   <img
     src="/images/icon/arrow.svg"
     alt=""
-    class="opacity-0 size-10 mx-auto mt-48 3xl:mt-88 transition-opacity duration-300 sticky bottom-16 left-0 right-0"  
+    class="opacity-0 size-10 mx-auto mt-48 3xl:mt-88 transition-opacity duration-300 sticky bottom-16 left-0 right-0"
     id="pointer"
   />
 
