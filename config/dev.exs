@@ -81,4 +81,20 @@ config :phoenix_live_view,
   # Enable helpful, but potentially expensive runtime checks
   enable_expensive_runtime_checks: true
 
+config :ueberauth, :issuers, [
+  %{name: :keycloak, issuer: "https://sso.milasholsting.dk/realms/VPS%20auth/.well-known/openid-configuration"}
+]
+
+config :ueberauth, Ueberauth,
+  providers: [
+    oidc: { Ueberauth.Strategy.Oidcc,
+      issuer: :keyckloak,
+      client_id: "Portfolio",
+      client_secret: "RlhehVQEDBoKHveD0q45pCNtsukbENMp",
+      scopes: ["openid", "profile", "email"],
+      callback_path: "/auth/oidc/callback",
+      userinfo: true,
+
+    }
+  ]
 import_config(".env.exs")

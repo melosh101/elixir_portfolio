@@ -1,7 +1,8 @@
 <.flash_group flash={@flash} />
-<div class="bg-black h-screen text-white p-8 overflow-scroll no-scrollbar snap-y snap-mandatory">
+<div id="root" class="bg-black h-screen text-white overflow-scroll no-scrollbar snap-y snap-mandatory" phx-hook="handleMount">
+<div class="min-h-screen">
   <section
-    class="border-4 border-gray-600/60 bg-gray-700/80 rounded-xl flex w-1/2 p-8 mt-40 mx-auto justify-between h-72 snap-center opacity-0"
+    class="border-4 border-gray-600/60 bg-gray-700/80 rounded-xl flex w-1/2 p-8 mt-16 mx-auto justify-between h-72 snap-center opacity-0"
     id="intro"
   >
     <div class="mr-8">
@@ -15,14 +16,16 @@
     </div>
     <img src="/images/milasholsting.png" alt="" class="size-48 rounded-full relative" />
   </section>
+</div>
   <img
     src="/images/icon/arrow.svg"
     alt=""
-    class="opacity-0 size-10 mx-auto mt-48 3xl:mt-88 transition-opacity duration-300"
+    class="opacity-0 size-10 mx-auto mt-48 3xl:mt-88 transition-opacity duration-300 sticky bottom-16 left-0 right-0"  
     id="pointer"
   />
+
   <%!-- project list --%>
-  <div class="min-h-screen">
-    <h1 class="text-center font-bold mt-16 snap-start">Mine projekter</h1>
-  </div>
+  <section class="min-h-screen">
+    <h1 class="text-center font-bold pt-16 snap-start text-3xl">Mine projekter</h1>
+  </section>
 </div>
