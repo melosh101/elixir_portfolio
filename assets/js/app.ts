@@ -64,10 +64,6 @@ if (searchparams.has("noanims")) {
 
 
 function handleMount() {
-
-  /**
-   * @type {Array<Array<string, Object>>}
-   */
   const introSeq: AnimationSequence = [
     ["#intro", { translateY: ["-30rem", "0"] }, { duration: .6, delay: 1.5, type: "spring", bounce: .4 }],
     ["#intro", { rotate: 0.35 }, { duration: 0.2, delay: 0.2 }],
@@ -82,8 +78,10 @@ function handleMount() {
     ["#pointer", { translateY: ["0", ".5rem", "0"], scale: [1, .9, 1] }, { duration: 2 }]
   ]
   if (!noAnims) {
-    animate(introSeq)
-    animate(arrowSeq)
+    animate(introSeq).then(() => {
+    animate("#pointer", { opacity: 1 }, { duration: 0 })
+    animate(arrowSeq, { repeat: Infinity })
+    })
   } else {
     animate("#pointer", { opacity: 1 }, { duration: 0 })
     animate(arrowSeq, { repeat: Infinity })
