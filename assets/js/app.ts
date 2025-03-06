@@ -80,7 +80,7 @@ function handleMount() {
     ["#pointer", { translateY: ["0", ".5rem", "0"], scale: [1, .9, 1] }, { duration: 2 }]
   ]
   if (!noAnims) {
-    animate(introSeq, {duration: 2}).then(() => {
+    animate(introSeq).then(() => {
       animate("#pointer", { opacity: 1 }, { duration: 0 })
       animate(arrowSeq, { repeat: Infinity })
     })
