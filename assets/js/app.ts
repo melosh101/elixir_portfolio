@@ -86,6 +86,7 @@ function handleMount() {
     })
   } else {
     animate("#pointer", { opacity: 1 }, { duration: 0 })
+    animate("#info", { opacity: 1 }, { duration: 0 })
     animate(arrowSeq, { repeat: Infinity })
   }
 }
