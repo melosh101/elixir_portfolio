@@ -70,8 +70,9 @@ function handleMount() {
     // drop img to border
     ["#intro>img", { translateY: ["0", "3.45rem"] }, { duration: .25, ease: "easeIn" }],
     ["#intro>img", { translateX: ["0", "1.98rem"], rotate: 25 }, { duration: .3, ease: "easeIn" }],
-    ["#info", { opacity: 1 }, { duration: 0.1, ease: "easeIn" }],
-    ["#info>section>*>li", { translateY: ["-1rem", "0"], opacity: [0, 1] }, { duration: 0.2, delay: stagger(0.1), ease: "easeIn" }],
+    ["#info", { opacity: 1, translateY: ["-10rem", "0"] }, { duration: 0.1, ease: "easeIn" }],
+    ["#info>section>h2", { translateY: ["-20rem", "0"],  opacity: [0, 1]}, { duration: 0.4, delay: stagger(0.1), ease: "easeIn", type: "spring" }],
+    ["#info>section>*>li", { translateY: ["-20rem", "0"],  opacity: [0, 1]}, { duration: 0.3, delay: stagger(0.1), ease: "easeOut" }],
 
   ]
 
@@ -81,7 +82,7 @@ function handleMount() {
   ]
   if (!noAnims) {
     animate(introSeq).then(() => {
-      animate("#pointer", { opacity: 1 }, { duration: 0 })
+      animate("#pointer", { opacity: 1 }, { duration: .5, delay: .6, ease: "easeIn" })
       animate(arrowSeq, { repeat: Infinity })
     })
   } else {
