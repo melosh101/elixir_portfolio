@@ -14,7 +14,7 @@
   "PostgreSQL",
   "MongoDB",
   "Git",
-  "GitHub",
+  "GitHub"
 ]
 
 socials = [
@@ -39,12 +39,12 @@ socials = [
 
 <div
   id="root"
-  class="bg-black h-screen text-white overflow-scroll no-scrollbar snap-y snap-mandatory"
+  class="bg-neutral-300 dark:bg-black h-screen dark:text-white overflow-scroll no-scrollbar snap-y snap-mandatory"
   phx-hook="handleMount"
 >
   <div class="min-h-screen">
     <section
-      class="relative border-4 border-gray-600/60 bg-gray-700 rounded-xl flex w-1/2 p-8 mt-16 mx-auto justify-between h-72 snap-center opacity-0 z-10"
+      class="relative border-4 bg-neutral-300 dark:border-gray-600/60 dark:bg-gray-700  rounded-xl flex w-1/2 p-8 mt-16 mx-auto justify-between h-72 snap-center opacity-0 z-10"
       id="intro"
     >
       <div class="mr-8">
@@ -71,33 +71,38 @@ socials = [
       <section>
         <h2 class="text-xl font-bold font-mono">Skills</h2>
         <ul class=" mt-3 flex flex-col flex-wrap gap-2 max-h-32 relative">
-            <li :for={social <- Enum.take(socials, 6)} class="flex-[1 1 80px] relative w-fit group">
-              <div class="flex gap-2 w-fit">
-                <%= if(Map.has_key?(social, :icon_white)) do %>
-                  <picture>
-                    <source srcset={social.icon_white} media="(prefers-color-scheme: dark)" />
-                    <img src={social.icon} alt={social.name} class="size-6" />
-                  </picture>
-                <% else %>
+          <li :for={social <- Enum.take(socials, 6)} class="flex-[1 1 80px] relative w-fit group">
+            <div class="flex gap-2 w-fit">
+              <%= if(Map.has_key?(social, :icon_white)) do %>
+                <picture>
+                  <source srcset={social.icon_white} media="(prefers-color-scheme: dark)" />
                   <img src={social.icon} alt={social.name} class="size-6" />
-                <% end %>
-                <a href={social.url} class="w-fit">{social.name}</a>
-              </div>
-                <span class="block relative -left-1.5 max-w-0 min-w-0 group-hover:min-w-[120%] transition-all duration-500 h-0.5 bg-slate-500 mt-1.5"></span>
-            </li>
+                </picture>
+              <% else %>
+                <img src={social.icon} alt={social.name} class="size-6" />
+              <% end %>
+              <a href={social.url} class="w-fit">{social.name}</a>
+            </div>
+            <span class="block relative -left-1.5 max-w-0 min-w-0 group-hover:min-w-[120%] transition-all duration-500 h-0.5 bg-slate-500 mt-1.5">
+            </span>
+          </li>
         </ul>
       </section>
     </div>
   </div>
-  <img
-    src="/images/icon/arrow.svg"
-    alt=""
-    class="opacity-0 size-10 mx-auto mt-48 3xl:mt-88 transition-opacity duration-300 sticky bottom-16 left-0 right-0"
-    id="pointer"
-  />
+  <picture>
+    <source srcset="/images/icon/arrow.white.svg" media="(prefers-color-scheme: dark)" />
+    <img
+      src="/images/icon/arrow.svg"
+      alt=""
+      class="opacity-0 size-10 mx-auto mt-48 3xl:mt-88 transition-opacity duration-300 sticky bottom-16 left-0 right-0"
+      id="pointer"
+      ,
+    />
+  </picture>
 
   <%!-- project list --%>
   <section class="min-h-screen">
-    <h1 class="text-center font-bold pt-16 snap-start text-3xl">Mine projekter</h1>
+    <h1 class="text-center font-bold pt-16 snap-start text-3xl ">Mine projekter</h1>
   </section>
 </div>
