@@ -93,7 +93,7 @@ if config_env() == :prod do
   # ensuring no data is ever sent via http, always redirecting to https:
   #
   #     config :portfolio, PortfolioWeb.Endpoint,
-  #       force_ssl: nil
+  #       force_ssl: [hsts: true]
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
 end
